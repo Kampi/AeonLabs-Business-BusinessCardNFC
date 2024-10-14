@@ -58,16 +58,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        [
-          "clearance|166000000|81375000|1806f26e-fcc0-44ee-848e-53ac82d2fffb|1503236d-3bf4-4d8a-a61d-126053e14dd0",
-          ""
-        ],
-        [
-          "clearance|172125000|83125000|5ce5d98e-4215-49d4-8b89-7f9c0753de77|6125adcc-0f1d-4716-9a7a-f85da8d25578",
-          ""
-        ]
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -84,6 +75,7 @@
         "duplicate_footprints": "warning",
         "extra_footprint": "warning",
         "footprint": "error",
+        "footprint_filters_mismatch": "ignore",
         "footprint_symbol_mismatch": "warning",
         "footprint_type_mismatch": "ignore",
         "hole_clearance": "error",
@@ -235,6 +227,7 @@
       "mfg": "",
       "mpn": ""
     },
+    "layer_pairs": [],
     "layer_presets": [],
     "viewports": []
   },
@@ -425,15 +418,18 @@
       "conflicting_netclasses": "error",
       "different_unit_footprint": "error",
       "different_unit_net": "error",
+      "duplicate_pins": "error",
       "duplicate_reference": "error",
       "duplicate_sheet_names": "error",
       "endpoint_off_grid": "warning",
       "extra_units": "error",
+      "footprint_filter": "ignore",
       "footprint_link_issues": "warning",
       "four_way_junction": "ignore",
       "global_label_dangling": "warning",
       "hier_label_mismatch": "error",
       "label_dangling": "error",
+      "label_multiple_wires": "warning",
       "lib_symbol_issues": "warning",
       "lib_symbol_mismatch": "warning",
       "missing_bidi_pin": "warning",
@@ -449,10 +445,14 @@
       "pin_not_driven": "error",
       "pin_to_pin": "error",
       "power_pin_not_driven": "error",
+      "same_local_global_label": "warning",
+      "similar_label_and_power": "warning",
       "similar_labels": "warning",
+      "similar_power": "warning",
       "simulation_model_issue": "ignore",
       "single_global_label": "ignore",
       "unannotated": "error",
+      "unconnected_wire_endpoint": "warning",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
@@ -479,6 +479,7 @@
         "microvia_drill": 0.1,
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
         "via_diameter": 0.8,
@@ -487,7 +488,7 @@
       }
     ],
     "meta": {
-      "version": 3
+      "version": 4
     },
     "net_colors": null,
     "netclass_assignments": null,
@@ -498,8 +499,8 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
-      "pos_files": "",
+      "plot": "../production/",
+      "pos_files": "../production/",
       "specctra_dsn": "",
       "step": "",
       "svg": "",
@@ -571,12 +572,54 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Distributor",
+          "name": "Distributor",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Mfr.",
+          "name": "Mfr.",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Mfr. No.",
+          "name": "Mfr. No.",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Order Number",
+          "name": "Order Number",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "CONFIG",
+          "name": "CONFIG",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Beschreibung",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -631,7 +674,7 @@
   "sheets": [
     [
       "ebaa69f5-ef0e-4064-8897-48b4c25cc2de",
-      "Root"
+      "Stammblatt"
     ]
   ],
   "text_variables": {}
